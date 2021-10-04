@@ -22,6 +22,7 @@ public class Launcher {
             System.out.println("введите текст:");
             Scanner sc = new Scanner(System.in);
             String s = sc.nextLine();
+            System.out.println("Введена строка"+s);
             System.out.println("введите ключ:");
             Scanner sc1 = new Scanner(System.in);
             int key = sc1.nextInt();
@@ -44,6 +45,7 @@ public class Launcher {
             System.out.println("введите зашифрованный текст:");
             Scanner sc = new Scanner(System.in);
             String s = sc.nextLine();
+            System.out.println("Введена строка"+s);
             System.out.println("введите ключ:");
             Scanner sc1 = new Scanner(System.in);
             int key = sc1.nextInt();
