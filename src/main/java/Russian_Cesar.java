@@ -15,7 +15,7 @@ public class Russian_Cesar {
             }
             encript_russian_text +=c;
         }
-        System.out.println(str+" После шифрования: "+encript_russian_text);
+        System.out.println("Строка "+str+" После шифрования примет следующий вид: "+encript_russian_text);
     }
 
     public  static void Decript_Russian(String str,int dr){
@@ -40,6 +40,6 @@ public class Russian_Cesar {
             }
             decript_russian_text +=c;// Объединяем дешифрованные символы в строку
         }
-        System.out.println(str+" После дешифрования: "+decript_russian_text);
+        System.out.println("Строка "+str+" После дешифрования примет следующий вид: "+decript_russian_text);
     }
 }

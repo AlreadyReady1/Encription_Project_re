@@ -9,6 +9,9 @@ public class Launcher {
 
     public static void main(String[] args)
     {
+        System.out.println("аргументы: ");
+        for (int i=0;i<args.length;i++) System.out.println(args[0]);
+        System.out.println("");
         Scanner scan = new Scanner(System.in);
         System.out.println("Выберите вид задачи: A- шифрование / B- дешифрование");
         String task_type = scan.nextLine();
@@ -22,7 +25,7 @@ public class Launcher {
             System.out.println("введите текст:");
             Scanner sc = new Scanner(System.in);
             String s = sc.nextLine();
-            System.out.println("Введена строка"+s);
+            System.out.println("Введена строка "+s);
             System.out.println("введите ключ:");
             Scanner sc1 = new Scanner(System.in);
             int key = sc1.nextInt();
@@ -45,7 +48,7 @@ public class Launcher {
             System.out.println("введите зашифрованный текст:");
             Scanner sc = new Scanner(System.in);
             String s = sc.nextLine();
-            System.out.println("Введена строка"+s);
+            System.out.println("Введена строка "+s);
             System.out.println("введите ключ:");
             Scanner sc1 = new Scanner(System.in);
             int key = sc1.nextInt();

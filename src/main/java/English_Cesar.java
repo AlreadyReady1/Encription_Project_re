@@ -23,7 +23,7 @@ public class English_Cesar {
             }
             encript_english_text +=c;// Объединяем  символы
         }
-        System.out.println("Строка "+str+" После шифрования: "+encript_english_text);
+        System.out.println("Строка "+str+" После шифрования примет следующий вид: "+encript_english_text);
     }
 
     public static void Decrypt_English(String str, int de) {
@@ -49,6 +49,6 @@ public class English_Cesar {
             }
             decript_english_text +=c;// Объединяем  символы в строку
         }
-        System.out.println("Строка "+str+" После дешифрования: "+decript_english_text);
+        System.out.println("Строка "+str+" После дешифрования примет следующий вид: "+decript_english_text);
     }
 }
