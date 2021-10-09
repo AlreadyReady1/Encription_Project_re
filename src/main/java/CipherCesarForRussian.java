@@ -1,6 +1,6 @@
-public class Russian_Cesar {
-    public static void Encript_Russian(String str,int er){
-        String encript_russian_text = "";
+public class CipherCesarForRussian {
+    public static void encriptCesarRussian(String str, int er){
+        String encriptRussianText = "";
         for (int i = 0;i<str.length();i++){
             char c=str.charAt(i);
             if (c>='а'&&c<='я'){
@@ -13,14 +13,14 @@ public class Russian_Cesar {
                 if (c<'А')c+=32;
                 if (c>'Я')c-=32;
             }
-            encript_russian_text +=c;
+            encriptRussianText +=c;
         }
-        System.out.println("Строка "+str+" После шифрования примет следующий вид: "+encript_russian_text);
+        System.out.println("Строка << "+str+" >> После шифрования примет следующий вид: "+"<< "+encriptRussianText+" >>");
     }
 
-    public  static void Decript_Russian(String str,int dr){
+    public  static void decriptCesarRussian(String str, int dr){
         int r = Integer.parseInt("-"+dr);
-        String decript_russian_text="";
+        String decriptRussianText="";
         for(int i = 0;i<str.length();i++) {
             char c=str.charAt(i);
             if(c>='а'&&c<='я')// Если символ в строке строчный
@@ -38,8 +38,8 @@ public class Russian_Cesar {
                 if(c>'Я')
                     c-=32;// направо
             }
-            decript_russian_text +=c;// Объединяем дешифрованные символы в строку
+            decriptRussianText +=c;// Объединяем дешифрованные символы в строку
         }
-        System.out.println("Строка "+str+" После дешифрования примет следующий вид: "+decript_russian_text);
+        System.out.println("Строка << "+str+" >> После дешифрования примет следующий вид: "+"<< "+decriptRussianText+" >>");
     }
 }

@@ -1,8 +1,8 @@
-public class English_Cesar {
+public class CipherCesarForEnglish {
 
-    public static void Encrypt_English(String str, int ee) {
+    public static void encryptCesarEnglish(String str, int ee) {
         // Зашифровать
-        String encript_english_text = "";
+        String encriptEnglishText = "";
         for(int i = 0;i<str.length();i++) {
             char c=str.charAt(i);
             if(c>='a'&&c<='z')// Если символ в строке строчный
@@ -21,15 +21,15 @@ public class English_Cesar {
                 if(c>'Z')
                     c-=26;// направо
             }
-            encript_english_text +=c;// Объединяем  символы
+            encriptEnglishText +=c;// Объединяем  символы
         }
-        System.out.println("Строка "+str+" После шифрования примет следующий вид: "+encript_english_text);
+        System.out.println("Строка << "+str+" >> После шифрования примет следующий вид: "+"<< "+encriptEnglishText+" >>");
     }
 
-    public static void Decrypt_English(String str, int de) {
+    public static void decryptCesarEnglish(String str, int de) {
         // расшифровываем
         int k = Integer.parseInt("-"+de);
-        String decript_english_text = "";
+        String decriptEnglishText = "";
         for(int i=0;i<str.length();i++) {
             char c=str.charAt(i);
             if(c>='a'&&c<='z')// Если символ в строке строчный
@@ -47,8 +47,8 @@ public class English_Cesar {
                 if(c>'Z')
                     c-=26;// направо
             }
-            decript_english_text +=c;// Объединяем  символы в строку
+            decriptEnglishText +=c;// Объединяем  символы в строку
         }
-        System.out.println("Строка "+str+" После дешифрования примет следующий вид: "+decript_english_text);
+        System.out.println("Строка << "+str+" >> После дешифрования примет следующий вид: "+"<< "+decriptEnglishText+" >>");
     }
 }

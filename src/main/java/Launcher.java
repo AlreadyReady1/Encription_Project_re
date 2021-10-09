@@ -3,65 +3,60 @@
 // + возможность менять величину сдвига
 //unicode для русского 1040-большие,1078-маленькие буквы (modul=32)
 //unicode для английского 65-большие,97-маленькие буквы (modul=26)
+
 import java.util.Scanner;
 
 public class Launcher {
 
-    public static void main(String[] args)
-    {
+    public static final String ENCRIPT = "-en";
+    public static final String DECRIPT = "-de";
+    public static final String RUSSIAN_LANGUAGE = "-rl";
+    public static final String ENGLISH_LANGUAGE = "-el";
+
+
+    public static void main(String[] args) {
+
         System.out.println("аргументы: ");
-        for (int i=0;i<args.length;i++) System.out.println(args[0]);
+        System.out.println(args[0]);
+        System.out.println(args[1]);
+
         System.out.println("");
         Scanner scan = new Scanner(System.in);
-        System.out.println("Выберите вид задачи: A- шифрование / B- дешифрование");
-        String task_type = scan.nextLine();
-        System.out.println("Выберите язык: R- русский / E- английский");
-        String language = scan.nextLine();
-        System.out.println("go");
+        System.out.println("введите текст:");
+        String text = scan.nextLine();
+     //   System.out.println("Выберите вид шифрования (шифр Цезаря,шифр перестановки и тд.)");
 
-        if(task_type.equalsIgnoreCase("A"))
-        {// Определяем, равны ли переменные s1 и A, игнорируя регистр
-            System.out.println("Выбран режим шифрования");
-            System.out.println("введите текст:");
-            Scanner sc = new Scanner(System.in);
-            String s = sc.nextLine();
-            System.out.println("Введена строка "+s);
+
+        if (args[0].equalsIgnoreCase(ENCRIPT)) {
+            // Определяем, равны ли переменные, игнорируя регистр
+            System.out.println("Выбранный режим - режим шифрования");
+            System.out.println("Введена строка " + "<< "+text+" >>");
             System.out.println("введите ключ:");
-            Scanner sc1 = new Scanner(System.in);
-            int key = sc1.nextInt();
-            System.out.println("Ключ = "+key);
+            int keyForEncript = scan.nextInt();
+            System.out.println("Ключ = " + keyForEncript);
 
-            if (language.equalsIgnoreCase("R"))
-            {
+            if (args[1].equalsIgnoreCase(RUSSIAN_LANGUAGE)) {
                 System.out.println("Выбран русский язык");
-                Russian_Cesar.Encript_Russian(s,key);
+                CipherCesarForRussian.encriptCesarRussian(text, keyForEncript);
             }
-            if (language.equalsIgnoreCase("E"))
-            {
+            if (args[1].equalsIgnoreCase(ENGLISH_LANGUAGE)) {
                 System.out.println("Выбран англлийский язык");
-                English_Cesar.Encrypt_English(s,key);// Вызываем метод шифрования
+                CipherCesarForEnglish.encryptCesarEnglish(text, keyForEncript);// Вызываем метод шифрования
             }
-
-        }else if(task_type.equalsIgnoreCase("B"))
-        {
-            System.out.println("Выбран режим дешифрования");
-            System.out.println("введите зашифрованный текст:");
-            Scanner sc = new Scanner(System.in);
-            String s = sc.nextLine();
-            System.out.println("Введена строка "+s);
-            System.out.println("введите ключ:");
-            Scanner sc1 = new Scanner(System.in);
-            int key = sc1.nextInt();
-            System.out.println("Ключ = "+key);
-            if (language.equalsIgnoreCase("R"))
-            {
-                System.out.println("Выбран русский язык");
-                Russian_Cesar.Decript_Russian(s,key);
-            }
-            if (language.equalsIgnoreCase("E"))
-            {
-                System.out.println("Выбран англлийский язык");
-                English_Cesar.Decrypt_English(s,key);// Вызываем метод дешифрования
+            if (args[0].equalsIgnoreCase(DECRIPT)) {
+                System.out.println("Выбранный режим - режим дешифрования");
+                System.out.println("Введена строка " + "<< "+text+"  >>");
+                System.out.println("введите ключ:");
+                int keyForDecript = scan.nextInt();
+                System.out.println("Ключ = " + keyForDecript);
+                if (args[1].equalsIgnoreCase(RUSSIAN_LANGUAGE)) {
+                    System.out.println("Выбран русский язык");
+                    CipherCesarForRussian.decriptCesarRussian(text, keyForDecript);
+                }
+                if (args[1].equalsIgnoreCase(ENGLISH_LANGUAGE)) {
+                    System.out.println("Выбран англлийский язык");
+                    CipherCesarForEnglish.decryptCesarEnglish(text, keyForDecript);// Вызываем метод дешифрования
+                }
             }
         }
     }
