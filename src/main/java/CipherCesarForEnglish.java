@@ -1,13 +1,15 @@
 public class CipherCesarForEnglish {
 
-    public static void encryptCesarEnglish(String str, int ee) {
+    public String encryptCesarEnglish(Args args) {
         // Зашифровать
+        String str = args.getTEXT();
+        int offset = Integer.parseInt(args[3]);
         String encriptEnglishText = "";
         for(int i = 0;i<str.length();i++) {
             char c=str.charAt(i);
             if(c>='a'&&c<='z')// Если символ в строке строчный
             {
-                c+=ee%26;// ключ
+                c+=offset%26;// ключ
                 if(c<'a')
                     c+=26;// налево
                 if(c>'z')
@@ -15,7 +17,7 @@ public class CipherCesarForEnglish {
             }
             else if(c>='A'&&c<='Z')// Если символ в строке в верхнем регистре
             {
-                c+=ee%26;// ключ
+                c+=offset%26;// ключ
                 if(c<'A')
                     c+=26;// налево
                 if(c>'Z')
@@ -23,10 +25,10 @@ public class CipherCesarForEnglish {
             }
             encriptEnglishText +=c;// Объединяем  символы
         }
-        System.out.println("Строка << "+str+" >> После шифрования примет следующий вид: "+"<< "+encriptEnglishText+" >>");
+        return encriptEnglishText;
     }
 
-    public static void decryptCesarEnglish(String str, int de) {
+    public static String decryptCesarEnglish(String str, int de) {
         // расшифровываем
         int k = Integer.parseInt("-"+de);
         String decriptEnglishText = "";
@@ -49,6 +51,6 @@ public class CipherCesarForEnglish {
             }
             decriptEnglishText +=c;// Объединяем  символы в строку
         }
-        System.out.println("Строка << "+str+" >> После дешифрования примет следующий вид: "+"<< "+decriptEnglishText+" >>");
+        return decriptEnglishText;
     }
 }

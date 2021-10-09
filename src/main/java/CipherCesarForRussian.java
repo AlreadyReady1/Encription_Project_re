@@ -1,24 +1,26 @@
 public class CipherCesarForRussian {
-    public static void encriptCesarRussian(String str, int er){
+    public String encriptCesarRussian(String[] args){
+        String str = args[1];
+        int offset = Integer.parseInt(args[3]);
         String encriptRussianText = "";
         for (int i = 0;i<str.length();i++){
             char c=str.charAt(i);
             if (c>='а'&&c<='я'){
-                c+=er%32;
+                c+=offset%32;
                 if (c<'а')c+=32;
                 if (c>'я')c-=32;
             }
             else if(c>='А'&&c<='Я'){
-                c+=er%32;
+                c+=offset%32;
                 if (c<'А')c+=32;
                 if (c>'Я')c-=32;
             }
             encriptRussianText +=c;
         }
-        System.out.println("Строка << "+str+" >> После шифрования примет следующий вид: "+"<< "+encriptRussianText+" >>");
+        return encriptRussianText;
     }
 
-    public  static void decriptCesarRussian(String str, int dr){
+    public static String decriptCesarRussian(String str, int dr){
         int r = Integer.parseInt("-"+dr);
         String decriptRussianText="";
         for(int i = 0;i<str.length();i++) {
@@ -40,6 +42,6 @@ public class CipherCesarForRussian {
             }
             decriptRussianText +=c;// Объединяем дешифрованные символы в строку
         }
-        System.out.println("Строка << "+str+" >> После дешифрования примет следующий вид: "+"<< "+decriptRussianText+" >>");
+        return decriptRussianText;
     }
 }
